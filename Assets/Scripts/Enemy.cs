@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour, iMovement
         //update purse
         collision.transform.GetComponent<Bullet>().myWeapon.BookKeepEnemy(this); //sends a message to the weapon to update list...
         speaker.PlayOneShot(deathSound);
-        Destroy(gameObject);//if there is more than 1 weapon you have to account for it somehow
+        Destroy(gameObject, 1);//if there is more than 1 weapon you have to account for it somehow
       }
       Destroy(bulletThatHitMe.gameObject);
       

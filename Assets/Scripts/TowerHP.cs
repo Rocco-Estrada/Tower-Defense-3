@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TowerHP : MonoBehaviour
 {
@@ -21,13 +22,12 @@ public class TowerHP : MonoBehaviour
             currentLife -= 20;
 
             healthBar.UpdateHealthBar(currentLife, maxLife);
-
-            if (currentLife <= 0) //Game Over ... Restart?
-            {
-                print("Game Over");
-            }
-            Destroy(enemyThatHitMe.gameObject);
-
+            print(currentLife);
+        if (currentLife <= 0) //Game Over ... Restart?
+        {
+            SceneManager.LoadScene("Game Over");
+        }
+        Destroy(enemyThatHitMe.gameObject);
         }
     }
 
